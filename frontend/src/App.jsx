@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { useState, useEffect } from 'react';
+import { ConnectKitProvider, ConnectKitButton, getDefaultConfig } from "connectkit";
+import { supabase } from './client';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    checkUser();
+    window.addEventListener('hashchange', function() {
+      checkUser();
+    });
+  }, [])
+  async function checkUser() {
+    const user = supabase.auth.user();
+    console.log(user);
+    setUser(user);
+  }
+  async function signInWithGithub() {
+    await supabase.auth.signIn({
+      provider: 'github'
+    });
+  }
+  async function signOut() {
+    await supabase.auth.signOut();
+    setUser(null);
+  }
+  if (user) {
+    return (
+      <div className="App">
+        <h1>Hello, {user.email}</h1>
+        <ConnectKitButton/>
+        <button onClick={signOut}>Sign out</button>
+      </div>
+    )
+  }
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <h1>Hello, please sign in!</h1>
+      <ConnectKitButton/>
+      <button onClick={signInWithGithub}>Sign In</button>
+    </div>
+  );
 }
 
-export default App
+export default App;
