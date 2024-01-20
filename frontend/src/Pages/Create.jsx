@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useMyContext } from "../api/NameContext";
-import Temp from "./Temp";
-
 import axios from "axios";
 
 const Create = () => {

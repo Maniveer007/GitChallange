@@ -9,10 +9,8 @@ import {
 import { supabase } from "../Components/client";
 import land from "../assets/land_img.png";
 import star from "../assets/star.png";
-
 import "./home.css";
 import { useNavigate } from "react-router-dom";
-// import "../App.css";
 
 function Home() {
   const [user, setUser] = useState(null);
