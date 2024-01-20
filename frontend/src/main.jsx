@@ -1,13 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { WagmiConfig, createConfig,configureChains  } from "wagmi";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import { WagmiConfig, createConfig, configureChains } from "wagmi";
 import { mainnet, goerli } from "wagmi/chains";
-import { ConnectKitProvider, ConnectKitButton, getDefaultConfig } from "connectkit";
-
-
-
+import {
+  ConnectKitProvider,
+  ConnectKitButton,
+  getDefaultConfig,
+} from "connectkit";
 
 const config = createConfig(
   getDefaultConfig({
@@ -17,14 +18,14 @@ const config = createConfig(
 
     // Required
     appName: "DEMO",
-    chains:[goerli],
-  }),
+    chains: [goerli],
+  })
 );
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <WagmiConfig config={config}>
-  <ConnectKitProvider>
-    <App />
+    <ConnectKitProvider>
+      <App />
     </ConnectKitProvider>
-    </WagmiConfig>
-)
+  </WagmiConfig>
+);

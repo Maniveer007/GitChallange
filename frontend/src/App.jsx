@@ -1,45 +1,22 @@
-import './App.css';
-import { useState, useEffect } from 'react';
-import { ConnectKitProvider, ConnectKitButton, getDefaultConfig } from "connectkit";
-import { supabase } from './client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import Create from "./Pages/Create";
+import Temp from "./Pages/Temp";
+import { MyProvider } from "./api/NameContext.jsx";
+import Navbar from "./Components/Navbar.jsx";
 
 function App() {
-  const [user, setUser] = useState(null);
-  useEffect(() => {
-    checkUser();
-    window.addEventListener('hashchange', function() {
-      checkUser();
-    });
-  }, [])
-  async function checkUser() {
-    const user = supabase.auth.user();
-    console.log(user);
-    setUser(user);
-  }
-  async function signInWithGithub() {
-    await supabase.auth.signIn({
-      provider: 'github'
-    });
-  }
-  async function signOut() {
-    await supabase.auth.signOut();
-    setUser(null);
-  }
-  if (user) {
-    return (
-      <div className="App">
-        <h1>Hello, {user.email}</h1>
-        <ConnectKitButton/>
-        <button onClick={signOut}>Sign out</button>
-      </div>
-    )
-  }
   return (
-    <div className="App">
-      <h1>Hello, please sign in!</h1>
-      <ConnectKitButton/>
-      <button onClick={signInWithGithub}>Sign In</button>
-    </div>
+    <MyProvider>
+      <BrowserRouter>
+      <Navbar/>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/temp" element={<Temp />} />
+        </Routes>
+      </BrowserRouter>
+    </MyProvider>
   );
 }
 
