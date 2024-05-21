@@ -1,0 +1,188 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_randomNumberContract",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "decideWinner",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "enum DicePoker.DiceFace",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"name": "diceFaceToString",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "gameStarted",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getFinalScore",
+		"outputs": [
+			{
+				"internalType": "string[5]",
+				"name": "player1Outcome",
+				"type": "string[5]"
+			},
+			{
+				"internalType": "string[5]",
+				"name": "player2Outcome",
+				"type": "string[5]"
+			},
+			{
+				"internalType": "uint8",
+				"name": "player1Score",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint8",
+				"name": "player2Score",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getWinner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "winner",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "joinGame",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "player1",
+		"outputs": [
+			{
+				"internalType": "address payable",
+				"name": "addr",
+				"type": "address"
+			},
+			{
+				"internalType": "uint32",
+				"name": "numRollsLeft",
+				"type": "uint32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "player2",
+		"outputs": [
+			{
+				"internalType": "address payable",
+				"name": "addr",
+				"type": "address"
+			},
+			{
+				"internalType": "uint32",
+				"name": "numRollsLeft",
+				"type": "uint32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "pot",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "randomNumberContract",
+		"outputs": [
+			{
+				"internalType": "contract RandomNumber",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint8[]",
+				"name": "_diceToReRoll",
+				"type": "uint8[]"
+			}
+		],
+		"name": "rollDice",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "viewDiceOutcome",
+		"outputs": [
+			{
+				"internalType": "string[5]",
+				"name": "",
+				"type": "string[5]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

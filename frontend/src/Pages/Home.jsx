@@ -7,8 +7,9 @@ import {
 } from "connectkit";
 
 import { supabase } from "../Components/client";
-import land from "../assets/land_img.png";
-import star from "../assets/star.png";
+import dashboard_img from "../assets/dashboard-img.png";
+import ludo from "../assets/ludo.png";
+import cards from "../assets/playing-cards.png";
 import "./home.css";
 import { useNavigate } from "react-router-dom";
 
@@ -45,16 +46,15 @@ function Home() {
   }
 
   const navigatehandler = () => {
-    navigate("/create");
+    navigate("/rules");
   };
 
   return (
     <>
       <div className="home">
         <div className="home_container_left">
-          <img className="star_img" src={star}></img>
-          <img className="star_img2" src={star}></img>
-
+          <img className="star_img" src={ludo}></img>
+          <img className="star_img2" src={cards}></img>
           <h1>Buy and sell digital art nft</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
@@ -62,32 +62,23 @@ function Home() {
             sequi!
           </p>
           <div className="home_container_button">
-            {user === null ? (
+            {/* {user === null ? (
               <button className="button_github" onClick={signInWithGithub}>
                 Connect with github
               </button>
             ) : (
-              <button className="button_github" onClick={signOut}>
-                Sign out
-              </button>
-            )}
+              <button className="button_github">Sign out</button>
+            )} */}
+            <button className="button_github">Play match</button>
             <button className="button_claim" onClick={navigatehandler}>
-              <span>Claim now &#x21AA;</span>
+              <span>Rules &#x21AA;</span>
             </button>
           </div>
         </div>
         {/* <h1>Hello, {user.email}</h1> */}
         {/* <ConnectKitButton /> */}
         <div className="home_container_right">
-          <img src={land}></img>
-        </div>
-      </div>
-      <div>
-        <h2>Easy Steps to Create and Sell Your NFT</h2>
-        <div className="home_lower">
-          <div className="home_lower_first"></div>
-          <div className="home_lower_second"></div>
-          <div className="home_lower_third"></div>
+          <img src={dashboard_img}></img>
         </div>
       </div>
     </>

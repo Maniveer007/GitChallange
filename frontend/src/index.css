@@ -57,3 +57,36 @@ h1 {
     background-color: #f9f9f9;
   }
 }
+
+
+/* styles.css */
+
+/* App component styles */
+.app-container {
+  display: flex;
+}
+
+/* ImageContainer component styles */
+.image-container {
+  border: 2px solid black;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container:hover {
+  border: 2px solid green;
+}
+
+/* Image component styles */
+.image {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image.dragging {
+  opacity: 0.5;
+}

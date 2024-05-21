@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "hardhat": "^2.19.4"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.21.3"
   }
 }

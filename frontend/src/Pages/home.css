@@ -1,14 +1,15 @@
 .home {
   margin-top: 25px;
-  min-height: 100vh;
+  min-height: 82vh;
   display: flex;
-  width: 100%;
+  padding: 0 30px;
+  /* width: 100%; */
   /* align-items: center; */
   justify-content: space-around;
 }
 
 .home_container_right img {
-  height: 600px;
+  height: 500px;
 }
 .home_container_left {
   width: 40%;
@@ -127,17 +128,29 @@
 }
 
 .star_img {
-  height: 95px;
+  height: 100px;
   position: absolute;
   top: 17%;
-  left: 35%;
+  right: 5%;
   z-index: -1;
+  animation: rotate360 infinite 18s linear;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .star_img2 {
-  height: 70px;
+  height: 500px;
+  opacity: 0.1;
+  transform: rotate(-30deg);
   position: absolute;
-  top: 80%;
-  left: 43%;
+  top: 5%;
+  left: -10%;
   z-index: -1;
 }

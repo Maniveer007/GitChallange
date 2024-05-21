@@ -25,7 +25,7 @@ const Navbar = () => {
 
       <div className="gpt3__navbar-sign">
         {/* <button type="button"> */}
-          <ConnectKitButton />
+          {/* <ConnectKitButton /> */}
           {/* {walletAddress ? walletAddress.slice(0, 8) + "..." : "Add account"} */}
         {/* </button> */}
       </div>
